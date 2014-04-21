@@ -1,14 +1,15 @@
-MODULE		= MODULE_NAME
-EXPORT 		= $(MODULE)
-BUILD_DIR 	= build
-BUNDLE 		= $(BUILD_DIR)/$(MODULE).js
+MODULE			= MODULE_NAME
+EXPORT 			= $(MODULE)
+BUILD_DIR 		= build
+BUNDLE 			= $(BUILD_DIR)/$(MODULE).js
 DEMO_BUNDLE 	= demo/bundle.js
-DEMO_ENTRY 	= demo/main.js
+DEMO_ENTRY 		= demo/main.js
+ENTRY			= index.js
 
-ENTRY		= index.js
+#
+#
 
-SRC 		= $(ENTRY)
-
+SRC = $(ENTRY)
 ifneq ($(wildcard lib),)
 	SRC += $(shell find lib -type f -name '*.js')
 endif
