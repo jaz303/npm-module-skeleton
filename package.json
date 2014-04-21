@@ -7,8 +7,8 @@
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
   "repository": {
-  	"type": "git",
-  	"url": "git://github.com/jaz303/MODULE_NAME.git"
+    "type": "git",
+    "url": "git://github.com/jaz303/MODULE_NAME.git"
   },
   "author": "Jason Frame <jason@onehackoranother.com> (http://jasonframe.co.uk)",
   "license": "ISC",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jaz303/MODULE_NAME",
   "devDependencies": {
-    "tape": "~2.12.3"
-  }
+    "tape": "~2.12.3",
+    "uglify-js": "~2.4.13"
+  },
+  "dependencies": {}
 }

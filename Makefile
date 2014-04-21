@@ -5,6 +5,7 @@ BUNDLE 			= $(BUILD_DIR)/$(MODULE).js
 DEMO_BUNDLE 	= demo/bundle.js
 DEMO_ENTRY 		= demo/main.js
 ENTRY			= index.js
+BINS 			= ./node_modules/.bin
 
 #
 #
@@ -27,13 +28,12 @@ info:
 
 watch:
 	watchify -o $(DEMO_BUNDLE) $(DEMO_ENTRY) &
-	watchify -o $(BUNDLE) -s $(EXPORT) $(ENTRY) &
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 $(BUNDLE): $(BUILD_DIR) $(SRC)
-	browserify -s $(EXPORT) -o $@ $(ENTRY)
+	browserify -s $(EXPORT) $(ENTRY) | $(BINS)/uglifyjs > $@
 
 $(DEMO_BUNDLE): $(DEMO_ENTRY) $(SRC)
-	browserify -o $@ $(DEMO_ENTRY)
+	browserify $(DEMO_ENTRY) > $@
