@@ -1,23 +1,27 @@
-MODULE			= MODULE_NAME
-EXPORT 			= $(MODULE)
-BUILD_DIR 		= build
-BUNDLE 			= $(BUILD_DIR)/$(MODULE).js
-DEMO_BUNDLE 	= demo/bundle.js
-DEMO_ENTRY 		= demo/main.js
-ENTRY			= index.js
-BINS 			= ./node_modules/.bin
+MODULE			:= MODULE_NAME
+EXPORT 			:= $(MODULE)
+BUILD_DIR 		:= build
+BUNDLE 			:= $(BUILD_DIR)/$(MODULE).js
+DEMO_BUNDLE 	:= demo/bundle.js
+DEMO_ENTRY 		:= demo/main.js
+ENTRY			:= index.js
+BINS 			:= ./node_modules/.bin
 
 #
 #
 
-SRC = $(ENTRY)
+SRC := $(ENTRY)
 ifneq ($(wildcard lib),)
 	SRC += $(shell find lib -type f -name '*.js')
 endif
 
-.PHONY: all clean info watch
+.PHONY: all bundle demo clean info watch
 
-all: $(BUNDLE) $(DEMO_BUNDLE)
+all: bundle demo
+
+bundle: $(BUNDLE)
+
+demo: $(DEMO_BUNDLE)
 
 clean:
 	rm -f $(BUNDLE)
