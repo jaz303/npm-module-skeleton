@@ -7,7 +7,7 @@ template Makefile
 template package.json
 template README.md
 
-copy_remaining
+copy_remaining exclude: ".gitkeep"
 
 shell "npm install --save-dev tape"
 shall "npm install --save-dev uglify-js"

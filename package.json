@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "set -e; for t in test/*.js; do node $t; done"
+    "test": "set -e; for t in test/cli/*.js; do node $t; done",
+    "watch-js": "npm run watch-demo-js & npm run watch-test-js",
+    "watch-demo-js": "watchify -o demo/bundle.js demo/main.js",
+    "watch-test-js": "watchify -o test/browser/bundle.js test/browser/main.js"
   },
   "repository": {
     "type": "git",
