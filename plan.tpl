@@ -2,7 +2,7 @@ inputs:
 
 get module_name, prompt: "Enter new module name:"
 
-get license, prompt: "License: ",
+get license, prompt: "License:",
              default: "ISC"
 
 yesno create_git_repo, prompt: "Create git repository?"
@@ -16,7 +16,7 @@ template package.json
 template README.md
 
 shell "npm install --save-dev tape"
-shall "npm install --save-dev uglify-js"
+shell "npm install --save-dev uglify-js"
 
 if create_git_repo?
     file optional/.gitignore, .gitignore
