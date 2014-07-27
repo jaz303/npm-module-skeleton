@@ -1,5 +1,5 @@
 {
-  "name": "MODULE_NAME",
+  "name": "{{ module_name }}",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -8,17 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaz303/MODULE_NAME.git"
+    "url": "git://github.com/{{ me.github_username }}/{{ module_name }}.git"
   },
-  "author": "Jason Frame <jason@onehackoranother.com> (http://jasonframe.co.uk)",
-  "license": "ISC",
+  "author": "{{ me.full_name }} <{{ me.email }}> ({{ me.website }})",
+  "license": "{{ license }}",
   "bugs": {
-    "url": "https://github.com/jaz303/MODULE_NAME/issues"
+    "url": "https://github.com/{{ me.github_username }}/{{ module_name }}/issues"
   },
-  "homepage": "https://github.com/jaz303/MODULE_NAME",
-  "devDependencies": {
-    "tape": "~2.12.3",
-    "uglify-js": "~2.4.13"
-  },
+  "homepage": "https://github.com/{{ me.github_username }}/{{ module_name }}",
+  "devDependencies": {},
   "dependencies": {}
 }
